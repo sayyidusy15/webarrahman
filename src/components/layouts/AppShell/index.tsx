@@ -6,6 +6,7 @@ import TopNavbar from "../ui/topnavbar";
 import BottomNavbar from "../ui/bottomnavbar";
 import Banner from "../ui/banner";
 import Features from "../ui/features";
+import About from "../ui/about";
 
 type AppShellProps = {
     children: React.ReactNode;
@@ -31,6 +32,7 @@ const AppShell = (props : AppShellProps) =>  {
             <main>
                 <Banner/>
                 <Features/>
+                <About/>
             </main>
 
 
@@ -39,6 +41,7 @@ const AppShell = (props : AppShellProps) =>  {
             {/* script js */}
             <Script type="module" src="/assets/vendor/swiper/swiper-bundle.min.js"/>
             <Script type="module" src="/assets/vendor/fslightbox/fslightbox.js"/>
+
             <Script type="module" src="/assets/js/main.js"/>
         </div>
     )
