@@ -6,7 +6,7 @@ export default function Banner(){
                 <div className="swiper-wrapper">
                     {/* <!-- single slide --> */}
                     <div className="swiper-slide">
-                        <div className="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('/..assets/img/banner-bg-1.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
+                        <div className="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('/assets/img/banner-bg-1.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
                             <div className="mx-[10%] md:mx-[15px]">
                                 <div className="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
                                     <h6 className="font-medium uppercase tracking-[3px] mb-[16px]">Welcome to School in <span className="text-edyellow">NY</span></h6>

@@ -5,6 +5,7 @@ import SideBar from "../ui/sidebar";
 import TopNavbar from "../ui/topnavbar";
 import BottomNavbar from "../ui/bottomnavbar";
 import Banner from "../ui/banner";
+import Features from "../ui/features";
 
 type AppShellProps = {
     children: React.ReactNode;
@@ -29,6 +30,7 @@ const AppShell = (props : AppShellProps) =>  {
 
             <main>
                 <Banner/>
+                <Features/>
             </main>
 
 
