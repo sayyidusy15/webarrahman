@@ -7,6 +7,16 @@ import BottomNavbar from "../ui/bottomnavbar";
 import Banner from "../ui/banner";
 import Features from "../ui/features";
 import About from "../ui/about";
+import Admission from "../ui/admission";
+import FormNotice from "../ui/form_notice";
+import CTA from "../ui/CTA";
+import Services from "../ui/services";
+import Testimonials from "../ui/testimonials";
+import Teacher from "../ui/teacher";
+import News from "../ui/news";
+import Partners from "../ui/partners";
+import Footers from "../ui/footers";
+// import Gallery from "../ui/gallery";
 
 type AppShellProps = {
     children: React.ReactNode;
@@ -33,7 +43,18 @@ const AppShell = (props : AppShellProps) =>  {
                 <Banner/>
                 <Features/>
                 <About/>
+                <Admission/>
+                <FormNotice/>
+                <CTA/>
+                <Services/>
+                {/* <Gallery/> */}
+                <Testimonials/>
+                <Teacher/>
+                <News/>
+                <Partners/>
+                
             </main>
+            <Footers/>
 
 
             
