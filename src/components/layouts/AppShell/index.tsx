@@ -55,9 +55,6 @@ const AppShell = (props : AppShellProps) =>  {
                 
             </main>
             <Footers/>
-
-
-            
             
             {/* script js */}
             <Script type="module" src="/assets/vendor/swiper/swiper-bundle.min.js"/>
