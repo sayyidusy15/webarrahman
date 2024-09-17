@@ -1,8 +1,30 @@
-
+import { useEffect } from "react";
+import Swiper from "swiper/bundle";
 
 export default function Testimonials() {
-    
+    useEffect(() => {
+        if(typeof window !== "undefined"){
+            new Swiper(".ed-testimonial-slider",{
+                slidesPerView:1,
+                loop:true,
+                autoplay:{
+                    delay:3000,
+                    disableOnInteraction:false,
+                },
+                pagination:{
+                    el: ".ed-testimonial-slider-pagination",
+                    type: "fraction",
+                },
+                navigation:{
+                    prevEl: ".ed-testimonial-slider-controls .prev",
+                    nextEl: ".ed-testimonial-slider-controls .next",
+                }
+            })
+        }
+    })
 
+
+    
     return (
         // <!-- TESTIMONIAL SECTION START -->
         <section className="py-[120px] xl:py-[80px] md:py-[60px]">

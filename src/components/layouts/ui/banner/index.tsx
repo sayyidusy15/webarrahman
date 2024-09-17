@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Swiper from "swiper/bundle";
 
-
 export default function Banner() {
   useEffect(() => {
     // Pastikan Swiper hanya diinisialisasi di sisi klien
