@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        edblue: '#241442',
-        edpurple: '#5B3AEE',
+        edblue: '#006769',
+        edpurple: '#40A578',
         edyellow: '#F8BC24',
         edoffwhite: '#FAF9F6',
         edgray: '#4F536C',

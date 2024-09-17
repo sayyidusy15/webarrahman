@@ -39,11 +39,11 @@ export default function News(){
                                     <span>By Admin</span>
                                 </div>
 
-                                {/* <!-- single info --> */}
-                                <div className="flex items-center gap-[10px] font-medium text-[12px] text-edgray">
+                                {/* <!-- single info comment --> */}
+                                {/* <div className="flex items-center gap-[10px] font-medium text-[12px] text-edgray">
                                     <span><img src="/assets/img/icon/comment.svg" alt="icon"/></span>
                                     <span>2 Comments</span>
-                                </div>
+                                </div> */}
                             </div>
                             <h5 className="font-medium text-[20px]"><a href="news-details.html" className="hover:text-edpurple">Collaboratively pontificate bleeding edge resources with inexpensive methodologies</a></h5>
                         </div>
@@ -68,11 +68,11 @@ export default function News(){
                                         <span>By Admin</span>
                                     </div>
 
-                                    {/* <!-- single info --> */}
-                                    <div className="flex items-center gap-[10px] font-medium text-[12px] text-edgray">
+                                    {/* <!-- single info comment --> */}
+                                    {/* <div className="flex items-center gap-[10px] font-medium text-[12px] text-edgray">
                                         <span><img src="/assets/img/icon/comment.svg" alt="icon"/></span>
                                         <span>2 Comments</span>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <h5 className="font-medium text-[20px] mb-[17px]"><a href="news-details.html" className="hover:text-edpurple">Collaboratively pontificate bleedi edge resources</a></h5>
 
@@ -101,11 +101,11 @@ export default function News(){
                                         <span>By Admin</span>
                                     </div>
 
-                                    {/* <!-- single info --> */}
-                                    <div className="flex items-center gap-[10px] font-medium text-[12px] text-edgray">
+                                    {/* <!-- single info comment --> */}
+                                    {/* <div className="flex items-center gap-[10px] font-medium text-[12px] text-edgray">
                                         <span><img src="/assets/img/icon/comment.svg" alt="icon"/></span>
                                         <span>2 Comments</span>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <h5 className="font-medium text-[20px] mb-[17px]"><a href="news-details.html" className="hover:text-edpurple">Collaboratively pontificate bleedi edge resources</a></h5>
 
