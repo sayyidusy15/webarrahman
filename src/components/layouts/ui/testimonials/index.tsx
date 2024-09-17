@@ -1,4 +1,8 @@
-export default function Testimonials(){
+
+
+export default function Testimonials() {
+    
+
     return (
         // <!-- TESTIMONIAL SECTION START -->
         <section className="py-[120px] xl:py-[80px] md:py-[60px]">
