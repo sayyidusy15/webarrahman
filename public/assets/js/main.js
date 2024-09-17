@@ -45,7 +45,7 @@ if (typeof window !== "undefined") {
     const edMobileMenuOpenBtn = document.querySelector(".ed-mobile-menu-open-btn");
     const edMobileMenuContents = document.querySelectorAll(".to-go-to-sidebar-in-mobile");
     const edMobileMenuContainer = document.querySelector(".ed-header-nav-in-mobile");
-    const edHeaderNavContainer = document.querySelector(".ed-header-nav-container");
+    // const edHeaderNavContainer = document.querySelector(".ed-header-nav-container");
     const edHeaderNav = document.querySelectorAll(".ed-header-nav li");
     if (window.innerWidth < 1200) {
         edHeaderNav.forEach(edHeaderNavItem => {
