@@ -1,4 +1,25 @@
+import { useEffect } from "react";
+import Swiper from "swiper/bundle";
+
 export default function Partners(){
+    useEffect(() => {
+        if (typeof window !== "undefined"){
+            new Swiper(".ed-partners-slider",{
+                slidesPerView: 2,
+                spaceBetween: 130,
+                autoplay: true,
+                breakpoints: {
+                    0: { slidesPerView: 2, spaceBetween: 40, },
+                    480: { slidesPerView: 3, spaceBetween: 90, },
+                    576: { slidesPerView: 3, },
+                    768: { slidesPerView: 4, },
+                    1200: { slidesPerView: 5, },
+                    1400: { slidesPerView: 6, }
+                },
+            });
+        }
+    },[]);
+
     return(
         // <!-- partners -->
         <div className="mx-[19.7%] xxxl:mx-[14.7%] xxl:mx-[9.7%] xl:mx-[3.2%] md:mx-[15px]">

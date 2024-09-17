@@ -18,6 +18,7 @@ import Partners from "../ui/partners";
 import Footers from "../ui/footers";
 // import Gallery from "../ui/gallery";
 
+
 type AppShellProps = {
     children: React.ReactNode;
 }
@@ -33,12 +34,10 @@ const AppShell = (props : AppShellProps) =>  {
             <Cart/>
             <Search/>
             <SideBar/>
-
             <header className="absolute z-[99] top-0 inset-x-[100px] xxl:inset-x-[30px] xl:inset-x-0 bg-white rounded-bl-[10px] rounded-br-[10px]">
                 <TopNavbar/>
                 <BottomNavbar/>
             </header>
-
             <main>
                 <Banner/>
                 <Features/>
@@ -52,7 +51,6 @@ const AppShell = (props : AppShellProps) =>  {
                 <Teacher/>
                 <News/>
                 <Partners/>
-                
             </main>
             <Footers/>
             
