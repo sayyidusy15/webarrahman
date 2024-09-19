@@ -2,34 +2,35 @@ export default function BottomNavbar(){
     return(
         // <!-- bottom header -->
         <div className="px-[30px] xxl:px-[15px] lg:px-[20px] py-[28px] lg:py-[18px] flex justify-between to-be-fixed">
-            <div className="logo xxs:max-w-[40%]"><a href="index.html"><img src="/assets/img/logo.png" alt="logo" className="logo"/></a></div>
+            <div className="logo xxs:max-w-[40%]"><a href="#"><img src="/assets/img/logo.png" alt="logo" className="logo"/></a></div>
 
             <div className="flex lg:items-center lg:gap-[60px] xxs:gap-[30px]">
                 <div className="flex items-center gap-[100px] xl:gap-[30px] lg:gap-y-0">
                     {/* <!-- nav --> */}
                     <div className="ed-header-nav-container">
                         <ul className="to-go-to-sidebar-in-mobile ed-header-nav flex lg:flex-col gap-x-[43px] xl:gap-x-[33px] font-kanit text-[17px] font-normal">
+                            {/* Dropdown Menu Beranda */}
                             <li className="has-sub-menu relative">
-                                <a role="button">Home</a>
-
+                                <a role="button">Beranda</a>
                                 <ul className="ed-header-submenu">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="index-2.html">Home 02</a></li>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Home 02</a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">About us</a></li>
+                            {/* Single Menu */}
+                            <li><a href="#">About us</a></li>
+                            {/* Dropdown Menu Courses */}
                             <li className="has-sub-menu relative">
                                 <a role="button">Courses</a>
-
                                 <ul className="ed-header-submenu">
                                     <li><a href="course-grid.html">Courses Grid</a></li>
                                     <li><a href="course-filter.html">Courses Filter</a></li>
                                     <li><a href="course-details.html">Course Details</a></li>
                                 </ul>
                             </li>
+                            {/* Dropdown Menu Pages */}
                             <li className="has-sub-menu relative">
                                 <a role="button">Pages</a>
-
                                 <ul className="ed-header-submenu">
                                     <li><a href="teachers.html">Teachers</a></li>
                                     <li><a href="teacher-details.html">Teacher Details</a></li>
@@ -42,16 +43,17 @@ export default function BottomNavbar(){
                                     <li><a href="404.html">Error 404</a></li>
                                 </ul>
                             </li>
+                            {/* Dropdown Menu News */}
                             <li className="has-sub-menu relative">
                                 <a role="button">News</a>
-
                                 <ul className="ed-header-submenu">
                                     <li><a href="news-grid.html">News Grid</a></li>
                                     <li><a href="news-list.html">News List</a></li>
                                     <li><a href="news-details.html">News Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact us</a></li>
+                            {/* Single Menu */}
+                            <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>
 
@@ -73,7 +75,7 @@ export default function BottomNavbar(){
                                 </g>
                             </svg>
                         </button>
-                        <a href="contact.html" className="ed-btn to-go-to-sidebar-in-mobile lg:m-[20px]">apply now</a>
+                        <a href="contact.html" className="ed-btn to-go-to-sidebar-in-mobile lg:m-[20px]">Daftar sekarang</a>
                     </div>
                 </div>
 

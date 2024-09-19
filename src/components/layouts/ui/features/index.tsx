@@ -9,8 +9,10 @@ export default function Features(){
                         <span className="icon">
                             <img src="/assets/img/feature-1.svg" alt="feature" className="mb-[11px]"/>
                         </span>
-                        <h4 className="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-edblue"><a href="#" className="hover:text-edpurple">School Life</a></h4>
-                        <p className="text-edgray2 group-hover:text-black mb-[18px]">Eimply dummy text printing ypese tting industry. Ipsum has been the</p>
+                        <h4 className="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-edblue"><a href="#" className="hover:text-edpurple">Akademik Unggulan</a></h4>
+                        <p className="text-edgray2 group-hover:text-black mb-[18px]">
+                            kurikulum terintegrasi dengan standar internasional dan nilai-nilai 
+                            keislaman untuk membentuk generasi berprestasi dan berakhlak mulia.</p>
                         <a href="#" className="text-edblue hover:text-edpurple"><span className="text-[14px]"><i className="fa-solid fa-angle-right"></i></span> View More</a>
                     </div>
 
