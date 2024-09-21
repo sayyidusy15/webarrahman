@@ -1,24 +1,41 @@
-// import { useEffect } from "react";
-// import Swiper from "swiper/bundle";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import supabase from "@/utils/supabaseClient";
+import { useEffect, useState } from "react";
+import Swiper from "swiper/bundle";
 
 export default function Banner() {
-  // useEffect(() => {
-  //   // Pastikan Swiper hanya diinisialisasi di sisi klien
-  //   if (typeof window !== "undefined") {
-  //     new Swiper(".ed-banner-slider", {
-  //       slidesPerView: 1,
-  //       loop: true,
-  //       autoplay: {
-  //       delay: 3000,
-  //       disableOnInteraction: false,
-  //       },
-  //       navigation: {
-  //         prevEl: ".ed-banner-slider-nav .prev",
-  //         nextEl: ".ed-banner-slider-nav .next",
-  //       },
-  //     });
-  //   }
-  // }, []);
+  const [data, setData] = useState<any[]>([]);
+  useEffect(() => {
+    // swiper
+    if (typeof window !== "undefined") {
+      new Swiper(".ed-banner-slider", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          prevEl: ".ed-banner-slider-nav .prev",
+          nextEl: ".ed-banner-slider-nav .next",
+        },
+      });
+    }
+
+    //fetchdata supabase
+    const getData = async () => {
+      const { data, error } = await supabase
+        .from("banner")
+        .select()
+        .order("id", { ascending: true });
+      if (error) {
+        console.error("Error fetching banner data");
+      } else {
+        setData(data);
+      }
+    };
+    getData();
+  }, []);
 
   return (
     // <!-- BANNER SECTION START -->
@@ -26,72 +43,38 @@ export default function Banner() {
       <div className="ed-banner-slider swiper relative">
         <div className="swiper-wrapper">
           {/* <!-- single slide --> */}
-          <div className="swiper-slide">
-            <div className="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('/assets/img/banner-bg-1.png')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
-              <div className="mx-[10%] md:mx-[15px]">
-                <div className="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
-                  <h6 className="font-medium uppercase tracking-[3px] mb-[16px]">
-                    Welcome to School in{" "}
-                    <span className="text-edyellow">NY</span>
-                  </h6>
-                  <h2 className="font-bold text-[clamp(35px,4.57vw,80px)] leading-[1.13] mb-[15px]">
-                    The Best School in Your Town
-                  </h2>
-                  <p className="leading-[1.75] mb-[41px]">
-                    Simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry’s standard dummy text ever
-                    since the 1500s, when an unknown printer took a galley of
-                    type and scrambled
-                  </p>
-                  <div className="flex items-center gap-[20px]">
-                    <a href="contact.html" className="ed-btn">
-                      Apply now
-                    </a>
-                    <a
-                      href="about.html"
-                      className="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple"
-                    >
-                      About us
-                    </a>
+          {data.map((banner_data, index) => (
+            <div key={index} className="swiper-slide">
+              <div className="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('/assets/img/banner-bg-1.png')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
+                <div className="mx-[10%] md:mx-[15px]">
+                  <div className="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
+                    <h6 className="font-medium uppercase tracking-[3px] mb-[16px]">
+                      {banner_data.heading_banner}{" "}
+                    </h6>
+                    <h2 className="font-bold text-[clamp(35px,4.57vw,80px)] leading-[1.13] mb-[15px]">
+                      {banner_data.title_banner}
+                    </h2>
+                    <p className="leading-[1.75] mb-[41px]">
+                      {banner_data.desc_banner}
+                    </p>
+                    <div className="flex items-center gap-[20px]">
+                      <a 
+                      href={banner_data?.btn_nav_left} 
+                      className="ed-btn">
+                        {banner_data.btn_text_left}
+                      </a>
+                      <a
+                        href={banner_data?.btn_nav_right}
+                        className="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple"
+                      >
+                        {banner_data.btn_text_right}
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* <!-- single slide --> */}
-          <div className="swiper-slide">
-            <div className="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('/assets/img/banner-bg-2.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
-              <div className="mx-[10%] md:mx-[15px]">
-                <div className="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
-                  <h6 className="font-medium uppercase tracking-[3px] mb-[16px]">
-                    Welcome to School in{" "}
-                    <span className="text-edyellow">NY</span>
-                  </h6>
-                  <h2 className="font-bold text-[clamp(35px,4.57vw,80px)] leading-[1.13] mb-[15px]">
-                    The Best School in Your Town
-                  </h2>
-                  <p className="leading-[1.75] mb-[41px]">
-                    Simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry’s standard dummy text ever
-                    since the 1500s, when an unknown printer took a galley of
-                    type and scrambled
-                  </p>
-                  <div className="flex items-center gap-[20px]">
-                    <a href="#" className="ed-btn">
-                      Apply now
-                    </a>
-                    <a
-                      href="#"
-                      className="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple"
-                    >
-                      About us
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* <!-- icon nav --> */}

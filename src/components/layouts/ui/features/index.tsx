@@ -32,14 +32,14 @@ export default function Features(){
                     {data.map((features_data,index)=>(
                     <div key={index} className="bg-[#FAF9F6] hover:bg-edyellow border-t-[7px] border-edyellow hover:border-edpurple duration-[400ms] p-[30px] sm:p-[25px] group relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-[url('/assets/img/faeture-bg.jpg')] before:mix-blend-hard-light before:opacity-0 before:duration-[400ms] hover:before:opacity-15">
                         <span className="icon">
-                            <img src="/assets/img/feature-1.svg" alt="feature" className="mb-[11px]"/>
+                            <img src={features_data?.img_features} alt="img features" className="mb-[11px]"/>
                         </span>
                         <h4 className="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-edblue"><a href="#" className="hover:text-edpurple">
                             {features_data?.title_features}
                             </a></h4>
                         <p className="text-edgray2 group-hover:text-black mb-[18px]">
                             {features_data?.desc_features}</p>
-                        <a href="#" className="text-edblue hover:text-edpurple"><span className="text-[14px]"><i className="fa-solid fa-angle-right"></i></span> View More</a>
+                        <a href={features_data?.navigation_features} className="text-edblue hover:text-edpurple"><span className="text-[14px]"><i className="fa-solid fa-angle-right"></i></span> View More</a>
                     </div>
                     ))}
                 </div>
