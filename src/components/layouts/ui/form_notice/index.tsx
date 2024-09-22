@@ -4,31 +4,42 @@ import supabase from '@/utils/supabaseClient';
 
 
 export default function FormNotice(){
-    const [data, setData] = useState<any[]>([]);
+    const [acaraData, setAcaraData] = useState<any[]>([]);
+    const [jadwalData, setJadwalData] = useState<any[]>([]);
 
     useEffect(() => {
         const getData = async () => {
-        const { data, error } = await supabase
-        .from("acara")
-        .select()
-        .order('id', { ascending: true }); 
-        if (error) {
-            console.error('Error fetching features data:', error);
-        } else {
-            setData(data);
-        }
+            try{
+                const[acaraResponse, jadwalResponse] = await Promise.all([
+                    supabase.from("acara").select().order('id',{ascending:true}),
+                    supabase.from("jadwal").select().order('id',{ascending:true}),
+                ]);
+                if(acaraResponse.error){
+                    console.error('Error fetching acara data:', acaraResponse.error);
+                }else{
+                    setAcaraData(acaraResponse.data)
+                }
+                if(jadwalResponse.error){
+                    console.error('Error fetching jadwal data:', jadwalResponse.error);
+                }else{
+                    setJadwalData(jadwalResponse.data)
+                }
+            } catch(error){
+                console.error('Error fetching data:', error);
+            }
         };
-
         getData();
     }, []);
-    
+
     return (
         // <!-- FORM & NOTICE SECTION START -->
         <section className="py-[100px] xl:py-[70px] md:py-[50px] relative z-[1] overflow-hidden">
             <div className="mx-[19.71%] xxxl:mx-[14.71%] xxl:mx-[9.71%] xl:mx-[5.71%] md:mx-[12px]">
                 <div className="flex lg:flex-col rounded-[20px] overflow-hidden bg-[#f5f4fe]">
                     {/* <!-- EVENT PPDB AR RAHMAN--> */}
-                    <div className="grow max-w-[49%] lg:max-w-full">
+                    {jadwalData.map((jadwal_data,index)=>(
+                    <div key={index} className="grow max-w-[49%] lg:max-w-full">
+                        
                         {/* <!-- heading --> */}
                         <div className="bg-edpurple p-[22px] pl-[170px] xxl:pl-[130px] xs:pl-[40px] xxs:pl-[22px]">
                             <h6 className="ed-section-sub-title ed-section-sub-title--white">Event</h6>
@@ -37,15 +48,15 @@ export default function FormNotice(){
 
                         {/* <!-- main content --> */}
                         <div className="p-[40px] pr-0 lg:pr-[40px] text-center">
-                            <img src="/assets/img/form-img.png" alt="form image" className="mx-auto drop-shadow-[0_4px_30px_rgba(0,0,0,0.1)] mb-[17px]"/>
-                            <h5 className="text-[20px] text-edblue mb-[28px]">DOWNLOAD BROWSUR PPDB AR-RAHMAN</h5>
+                            <img src={jadwal_data.img_jadwal} alt="form image" className="mx-auto drop-shadow-[0_4px_30px_rgba(0,0,0,0.1)] mb-[17px]"/>
+                            <h5 className="text-[20px] text-edblue mb-[28px]">{jadwal_data.title_download_jadwal}</h5>
                             <div className="space-x-4">
-                                <a href="/assets/pdf/notice.pdf" download className="ed-btn">PPDB SMA</a>
-                                <a href="/assets/pdf/notice.pdf" download className="ed-btn">PPDB SMP</a>
+                                <a href="/assets/pdf/notice.pdf" download className="ed-btn">{jadwal_data.text_file1}</a>
+                                <a href="/assets/pdf/notice.pdf" download className="ed-btn">{jadwal_data.text_file2}</a>
                             </div>
                         </div>
                     </div>
-
+                    ))}
                     {/* <!-- JADWAL ACARA AR RAHMAN --> */}
                     <div className="grow max-w-[51%] lg:max-w-full">
                         {/* <!-- heading --> */}
@@ -56,7 +67,7 @@ export default function FormNotice(){
                         {/* <!-- main content --> */}
                         <div  className="p-[40px] xl:px-[25px] lg:pl-[70px] sm:pl-[50px] xxs:p-[15px] space-y-[22px]">
                         {/* {section content } */}
-                        {data.map((acara_data,index)=>(
+                        {acaraData.map((acara_data,index)=>(
                             <div key={index} className="flex gap-x-[20px] items-center relative before:absolute before:h-[1px] before:w-[40px] xl:before:w-[30px] before:bg-edpurple before:right-[100%] before:top-[50%] before:-translate-y-[50%] xxs:before:content-none after:absolute after:w-[1px] after:h-[114%] after:bg-edpurple after:bottom-[50%] after:right-[calc(100%+40px)] xl:after:right-[calc(100%+30px)] xxs:after:content-none first:after:content-none">
                                 <div className="xxs:hidden icon shrink-0 p-[14px] bg-white border border-[#d9d9d9] rounded-[10px] w-[110px] xl:w-[90px] aspect-square flex items-center justify-center">
                                     <img src="/assets/img/notice-icon.png" alt="icon"/>

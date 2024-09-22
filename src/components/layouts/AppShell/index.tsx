@@ -9,13 +9,13 @@ import Features from "../ui/features";
 import About from "../ui/about";
 // import Admission from "../ui/admission";
 import FormNotice from "../ui/form_notice";
-import CTA from "../ui/CTA";
-import Services from "../ui/services";
-import Testimonials from "../ui/testimonials";
-import Teacher from "../ui/teacher";
-import News from "../ui/news";
-import Partners from "../ui/partners";
-import Footers from "../ui/footers";
+// import CTA from "../ui/CTA";
+// import Services from "../ui/services";
+// import Testimonials from "../ui/testimonials";
+// import Teacher from "../ui/teacher";
+// import News from "../ui/news";
+// import Partners from "../ui/partners";
+// import Footers from "../ui/footers";
 // import Gallery from "../ui/gallery";
 
 
@@ -44,15 +44,15 @@ const AppShell = (props : AppShellProps) =>  {
                 <About/>
                 {/* <Admission/> */}
                 <FormNotice/>
-                <CTA/>
-                <Services/>
+                {/* <CTA/>
+                <Services/> */}
                 {/* <Gallery/> */}
-                <Testimonials/>
+                {/* <Testimonials/>
                 <Teacher/>
                 <News/>
-                <Partners/>
+                <Partners/> */}
             </main>
-            <Footers/>
+            {/* <Footers/> */}
             
             {/* script js */}
             <Script type="module" src="/assets/vendor/swiper/swiper-bundle.min.js"/>
