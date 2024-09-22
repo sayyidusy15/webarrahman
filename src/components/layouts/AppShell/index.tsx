@@ -7,7 +7,7 @@ import BottomNavbar from "../ui/bottomnavbar";
 import Banner from "../ui/banner";
 import Features from "../ui/features";
 import About from "../ui/about";
-import Admission from "../ui/admission";
+// import Admission from "../ui/admission";
 import FormNotice from "../ui/form_notice";
 import CTA from "../ui/CTA";
 import Services from "../ui/services";
@@ -42,7 +42,7 @@ const AppShell = (props : AppShellProps) =>  {
                 <Banner/>
                 <Features/>
                 <About/>
-                <Admission/>
+                {/* <Admission/> */}
                 <FormNotice/>
                 <CTA/>
                 <Services/>
