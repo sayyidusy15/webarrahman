@@ -12,7 +12,7 @@ export default function Banner() {
         slidesPerView: 1,
         loop: true,
         autoplay: {
-          delay: 3000,
+          delay: 5000,
           disableOnInteraction: false,
         },
         navigation: {
@@ -45,7 +45,11 @@ export default function Banner() {
           {/* <!-- single slide --> */}
           {data.map((banner_data, index) => (
             <div key={index} className="swiper-slide">
-              <div className="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('/assets/img/banner-bg-1.png')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
+              <div className="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px]  bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none"
+              style={{
+                backgroundImage: `url(${banner_data.img_banner})`
+              }}
+              >
                 <div className="mx-[10%] md:mx-[15px]">
                   <div className="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
                     <h6 className="font-medium uppercase tracking-[3px] mb-[16px]">
