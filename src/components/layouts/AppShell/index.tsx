@@ -9,8 +9,8 @@ import Features from "../ui/features";
 import About from "../ui/about";
 // import Admission from "../ui/admission";
 import FormNotice from "../ui/form_notice";
-import CTA from "../ui/CTA";
-import Services from "../ui/services";
+// import CTA from "../ui/CTA";
+// import Services from "../ui/services";
 import Testimonials from "../ui/testimonials";
 import Teacher from "../ui/teacher";
 import News from "../ui/news";
@@ -44,8 +44,8 @@ const AppShell = (props : AppShellProps) =>  {
                 <About/>
                 {/* <Admission/> */}
                 <FormNotice/>
-                <CTA/>
-                <Services/>
+                {/* <CTA/> */}
+                {/* <Services/> */}
                 {/* <Gallery/> */}
                 <Testimonials/>
                 <Teacher/>
