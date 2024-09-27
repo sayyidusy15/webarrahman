@@ -1,7 +1,7 @@
 export default function Footers(){
     return(
         // <!-- FOOTER SECTION START -->
-    <footer className="bg-edblue relative z-[1] before:absolute before:inset-0 before:-z-[1] before:bg-[url('/assets/img/footer-bg.jpg')] before:opacity-[7%] before:bg-no-repeat before:bg-cover before:bg-center text-white">
+    <footer className="bg-edblue relative z-[1] before:absolute before:inset-0 before:-z-[1] before:bg-[url('/assets/img/footer-bg.png')] before:opacity-[15%] before:bg-no-repeat before:bg-cover before:bg-center text-white">
         <div className="mx-[19.71%] xxxl:mx-[14.71%] xxl:mx-[9.71%] xl:mx-[5.71%] md:mx-[12px]">
             {/* <!-- footer top --> */}
             <div className="flex flex-wrap justify-between gap-[35px] pt-[100px] pb-[58px] border-b border-white/20">

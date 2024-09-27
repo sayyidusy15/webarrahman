@@ -6,6 +6,21 @@ import Swiper from "swiper/bundle";
 export default function Banner() {
   const [data, setData] = useState<any[]>([]);
   useEffect(() => {
+    
+    //fetchdata supabase
+    const getData = async () => {
+      const { data, error } = await supabase
+        .from("banner")
+        .select()
+        .order("id", { ascending: true });
+      if (error) {
+        console.error("Error fetching banner data");
+      } else {
+        setData(data);
+      }
+    };
+    getData();
+
     // swiper
     if (typeof window !== "undefined") {
       new Swiper(".ed-banner-slider", {
@@ -22,19 +37,7 @@ export default function Banner() {
       });
     }
 
-    //fetchdata supabase
-    const getData = async () => {
-      const { data, error } = await supabase
-        .from("banner")
-        .select()
-        .order("id", { ascending: true });
-      if (error) {
-        console.error("Error fetching banner data");
-      } else {
-        setData(data);
-      }
-    };
-    getData();
+    
   }, []);
 
   return (
